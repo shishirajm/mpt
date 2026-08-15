@@ -56,13 +56,12 @@ Do not invent capacities, certifications, client names, awards or years. Everyth
 Registered Office: B-291(a), 7th Main, Peenya 2nd Stage,
                    Peenya Industrial Area, Bangalore – 560058, Karnataka, India
 Sales:             +91 99000 89435 · +91 99000 89436 · +91 99000 89440
-Landline:          080 2836 9097
 Chennai region:    +91 98416 79943
 NCR region:        +91 98186 76627
 Email:             sales@macprecitecindia.com
 ```
 
-Resolved: the owner-supplied list originally repeated `9900089435` twice with no landline. The company's own profile PDF (`docs/Macprecitec India - Profile.pdf`, gitignored, not public) lists all four numbers together on its Contact page — `89436` is a genuine third mobile, and the landline `080 2836 9097` is part of the company's own published contact block. Both are now live on the site.
+Resolved: the owner-supplied list originally repeated `9900089435` twice. The company's own profile PDF (`docs/Macprecitec India - Profile.pdf`, gitignored, not public) confirmed `89436` as a genuine third mobile, now live on the site. The PDF's contact block also lists a landline (080 2836 9097), but that's been removed from the site's contact page — mobiles only.
 
 ---
 
