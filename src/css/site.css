@@ -301,6 +301,9 @@ ul{margin:0;padding:0;list-style:none}
 .site-foot a:hover{color:var(--c-accent);text-decoration:underline}
 .site-foot li{padding:var(--s-1) 0}
 .site-foot address{font-style:normal;color:var(--c-text-mute);font-size:var(--fs-sm);line-height:1.7}
+.policy-links{margin-top:var(--s-5);display:flex;flex-wrap:wrap;gap:var(--s-4);font-size:var(--fs-xs)}
+.policy-links a{color:var(--c-text-dim)}
+.policy-links a:hover{color:var(--c-accent)}
 .legal{margin-top:var(--s-6);padding-top:var(--s-4);border-top:1px solid var(--c-line);
   color:var(--c-text-dim);font-size:var(--fs-xs);display:grid;gap:var(--s-2)}
 
@@ -457,7 +460,7 @@ ul{margin:0;padding:0;list-style:none}
   .rail li{border-bottom:0;border-right:1px solid var(--c-line)}
   .rail li:nth-child(3n){border-right:1px solid var(--c-line)}
   .rail li:last-child{border-right:0}
-  .pgrid{grid-template-columns:repeat(5,1fr)}
+  .pgrid{grid-template-columns:repeat(3,1fr)}
   .mobbar{display:none}
   .band,.range{padding:var(--s-8) 0}
   .tablist label{padding:var(--s-3) var(--s-5)}

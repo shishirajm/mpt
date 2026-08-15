@@ -13,6 +13,7 @@ const pages = [
   { name: 'tools-iso', path: '/tools/iso-tools.html' },
   { name: 'tools-adaptors', path: '/tools/adaptors.html' },
   { name: 'tools-setting-devices', path: '/tools/tool-setting-devices.html' },
+  { name: 'tools-presetters', path: '/tools/tool-presetters.html' },
   { name: 'sectors', path: '/sectors.html' },
   { name: '404', path: '/404.html' },
 ];

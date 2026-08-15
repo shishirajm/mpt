@@ -43,7 +43,7 @@ Do not invent capacities, certifications, client names, awards or years. Everyth
 - Founded **2013** with 3 employees; **55+** today.
 - 2014 moved to 5,000 sq ft · 2015 added PCD manufacturing · 2019 own site, **15,000 sq ft**.
 - Production tolerances **≤3 µm** for tool diameters.
-- Products: **PCD tools · Fine boring tools · ISO tools · Adaptors / tool holding systems · Tool setting devices & fixtures**.
+- Products: **PCD tools · Fine boring tools · ISO tools · Adaptors / tool holding systems · Tool setting devices & fixtures**. The site also shows **Tool presetters** as a 6th tools-grid category — the off-machine length/diameter measuring equipment itself, a companion to Tool setting devices rather than a separate company-profile fact; both trace to the same "gauging systems" claim.
 - Sectors: **Automobile · Aerospace · Defence · Medical · Power generation · Machine builders**.
 - Services: complete responsibility for proving out tools, incl. cycle time optimisation and statistical parameters.
 - Everything — design, planning, PCD manufacturing, QA — under one roof in Peenya.
