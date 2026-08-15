@@ -1,4 +1,4 @@
-# CLAUDE.md — Mac Precitec India website
+# CLAUDE.md — Mac Precitec India Pvt Ltd website
 
 Context for Claude Code working in this repository. Read this before making any change.
 Self-contained: everything needed to work here is in this file.
@@ -21,7 +21,7 @@ Work as **a senior web designer and a senior UX designer in one person** — not
 
 ## 2. What this is
 
-Static marketing and product-catalogue site for **Mac Precitec India Private Limited**, a precision cutting-tool manufacturer in Peenya, Bangalore.
+Static marketing and product-catalogue site for **Mac Precitec India Pvt Ltd**, a precision cutting-tool manufacturer in Peenya, Bangalore.
 
 The site's job, in priority order:
 
@@ -217,7 +217,7 @@ One codebase, three *designed* states — each reviewed and signed off separatel
 
 ## 10. SEO & AI search
 
-- `<title>`: `Primary Keyword | Mac Precitec India`, ≤60 chars. Unique 140–160 char description per page.
+- `<title>`: `Primary Keyword | Mac Precitec India Pvt Ltd`, ≤60 chars. Unique 140–160 char description per page.
 - URLs lowercase, hyphenated, meaningful (`/products/fine-boring-tools/`). Self-referencing canonical on every page.
 - JSON-LD: `Organization` site-wide, `Product` on product pages, `BreadcrumbList` on nested pages. Never mark up invisible content.
 - Update `sitemap.xml` in the same change that adds a page.

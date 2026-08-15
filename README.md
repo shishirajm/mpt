@@ -1,6 +1,6 @@
-# Mac Precitec India — website
+# Mac Precitec India Pvt Ltd — website
 
-Static marketing and product-catalogue site for Mac Precitec India Private Limited,
+Static marketing and product-catalogue site for Mac Precitec India Pvt Ltd,
 a precision cutting-tool manufacturer in Peenya, Bangalore.
 
 **Design direction:** 02 — "Single Pass"
