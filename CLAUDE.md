@@ -230,13 +230,16 @@ One codebase, three *designed* states — each reviewed and signed off separatel
 
 ```
 src/                   everything that ships — this is the web root
-├── index.html  contact.html  company.html  engineering.html  404.html
+├── index.html  contact.html  company.html  engineering.html  sectors.html  404.html
+├── tools/                index.html + pcd-tools.html, fine-boring-tools.html,
+│                         iso-tools.html, adaptors.html, tool-setting-devices.html
 ├── css/site.css          whole stylesheet
 ├── js/app.js             nav enhancement — site works without it
 ├── js/analytics.js       measurement layer, only file naming a vendor
 ├── assets/fonts/         oswald-400.woff2, oswald-600.woff2
 ├── assets/brand/         mpi-logo.svg + on-dark + mono-white, favicons, source .cdr
 ├── assets/photography/   real facility/team/process photos, sourced from the company profile PDF
+│   └── products/         real product studio photos, same source (see §14 caveat)
 └── robots.txt  sitemap.xml  site.webmanifest
 tests/visual/           dev-only Playwright visual regression tests (not shipped)
 ```
@@ -250,7 +253,7 @@ infrastructure that never touches the shipped site.
 
 Preview: `python3 -m http.server 8000 --directory src`. A `file://` open won't work — paths are root-absolute.
 
-Nav is currently `Tools · Sectors · Engineering · Company · Contact` + Enquire. Engineering and Company are real pages (`/engineering.html`, `/company.html`). Tools and Sectors are still **anchors on the home page** until their dedicated pages exist (see §14) — never ship a dead link.
+Nav is `Tools · Sectors · Engineering · Company · Contact` + Enquire — every item is now a real page (`/tools/`, `/sectors.html`, `/engineering.html`, `/company.html`, `/contact.html`). No anchor-only nav links remain.
 
 ---
 
@@ -285,10 +288,9 @@ Nav is currently `Tools · Sectors · Engineering · Company · Contact` + Enqui
 ## 14. Outstanding — blocked or needs the owner
 
 - [ ] **Enquiry form has no endpoint** (`action="#"`). A static site needs a form service before it can deliver anything. **Blocks launch.**
-- [x] ~~Product photography~~ — Home, Company and Engineering now use real facility/team/process photos extracted from `docs/Macprecitec India - Profile.pdf`. **Resolution ceiling**: every extracted image was already JPEG-compressed once for the PDF; largest usable is ~800px wide. Fine for the current below-the-fold placements, but **request original-resolution files** before using any of them as a large hero crop or on the still-outstanding product/sector pages.
-- [ ] Product photography specific to each of the 5 tool categories (PCD, fine boring, ISO, adaptors, tool setting devices) for the Phase 2 product pages — the profile PDF has real studio shots of MP-branded tooling for this; not yet extracted/placed.
+- [x] ~~Product photography~~ — every page (Home, Company, Engineering, Tools index, all 5 product pages) now uses real facility/team/process/product photos extracted from `docs/Macprecitec India - Profile.pdf`. **Resolution ceiling**: every extracted image was already JPEG-compressed once for the PDF; largest usable is ~800px wide. Fine for the current card/detail placements, but **request original-resolution files** before using any of them as a large hero crop. **Category-assignment caveat**: the 5 product pages' studio shots were matched to PCD/fine-boring/ISO/adaptors/setting-devices by visual judgment, not legible labels — confirm each is actually the right tool before this is taken as final.
 - [x] ~~Confirm the third phone number and whether the landline appears~~ — resolved via the profile PDF, see §3.
 - [ ] Privacy policy page — prerequisite before any analytics goes live.
 - [ ] Open Graph share image at `src/assets/brand/og-home.png` (referenced, not yet created).
-- [ ] Remaining pages: Tools index + 5 product pages, Sectors (6 sectors). Company and Engineering are done.
+- [x] ~~Remaining pages~~ — Tools index + 5 product pages + Sectors are all built. Every nav item is a real page; nothing left as a home-page anchor.
 - [ ] Hosting undecided — keep output host-agnostic; no serverless functions, no host-specific header syntax in pages. Whatever host is chosen must be configurable to publish `src/` as the document root (see §11).

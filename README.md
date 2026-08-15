@@ -20,13 +20,15 @@ src/                   Everything that ships — this is the web root
 ├── contact.html       Contact & enquiry
 ├── company.html       About, vision, milestones, team, infrastructure
 ├── engineering.html   Design → manufacture → prove-out process
+├── sectors.html       6 sectors served, expanded from Home's tab copy
+├── tools/             index.html + 5 product detail pages
 ├── 404.html           Not found
 ├── css/site.css       The whole stylesheet
 ├── js/app.js          Nav enhancement — the site works without it
 ├── js/analytics.js    Measurement layer; the ONLY file that names a vendor
 ├── assets/fonts/      Oswald 400 + 600, self-hosted, subset (24KB total)
 ├── assets/brand/      Logo (SVG, 3 surface variants), favicons, source .cdr
-├── assets/photography/ Real facility/team/process photos (see note below)
+├── assets/photography/ Real facility/team/process/product photos (see note below)
 ├── robots.txt         Allows reputable AI crawlers
 ├── sitemap.xml        Update when adding a page
 └── site.webmanifest

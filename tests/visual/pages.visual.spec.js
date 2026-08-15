@@ -7,6 +7,13 @@ const pages = [
   { name: 'contact', path: '/contact.html' },
   { name: 'company', path: '/company.html' },
   { name: 'engineering', path: '/engineering.html' },
+  { name: 'tools-index', path: '/tools/' },
+  { name: 'tools-pcd', path: '/tools/pcd-tools.html' },
+  { name: 'tools-fine-boring', path: '/tools/fine-boring-tools.html' },
+  { name: 'tools-iso', path: '/tools/iso-tools.html' },
+  { name: 'tools-adaptors', path: '/tools/adaptors.html' },
+  { name: 'tools-setting-devices', path: '/tools/tool-setting-devices.html' },
+  { name: 'sectors', path: '/sectors.html' },
   { name: '404', path: '/404.html' },
 ];
 
