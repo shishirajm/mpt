@@ -45,6 +45,13 @@ test('no broken internal links', async ({ request, baseURL }) => {
 
     const body = await res.text();
     const hrefs = [...body.matchAll(/(?:href|src)="([^"]+)"/g)].map((m) => m[1]);
+    // srcset can hold multiple "url descriptor, url descriptor" entries — <picture><source srcset="...">.
+    for (const m of body.matchAll(/srcset="([^"]+)"/g)) {
+      for (const candidate of m[1].split(',')) {
+        const url = candidate.trim().split(/\s+/)[0];
+        if (url) hrefs.push(url);
+      }
+    }
 
     for (const raw of hrefs) {
       if (!raw || raw.startsWith('#') || raw.startsWith('mailto:') || raw.startsWith('tel:') || raw.startsWith('data:')) continue;

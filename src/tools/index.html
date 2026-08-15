@@ -31,7 +31,7 @@
 :root{--c-bg:#0B0F14;--c-surface:#121820;--c-surface-2:#0E141A;--c-line:#1E2932;--c-accent:#009EE0;--c-accent-deep:#04121B;--c-ice:#7DD3FC;--c-text:#EDEFF2;--c-text-mute:#9AA7B4;--c-text-dim:#74879A;--f-display:Oswald,"Arial Narrow","Helvetica Neue",system-ui,sans-serif;--f-body:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--f-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--fs-micro:.625rem;--fs-xs:.75rem;--fs-sm:.8125rem;--fs-base:.9375rem;--fs-lg:1.0625rem;--fs-xl:1.5625rem;--fs-2xl:2.125rem;--s-1:4px;--s-2:8px;--s-3:12px;--s-4:16px;--s-5:24px;--s-6:32px;--s-7:48px;--pad:18px;--max:1200px}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--c-bg);color:var(--c-text);font-family:var(--f-body);font-size:var(--fs-base);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img,svg{display:block;max-width:100%;height:auto}
+img,svg,picture{display:block;max-width:100%;height:auto}
 h1{font-family:var(--f-display);font-weight:600;text-transform:uppercase;line-height:1.05;margin:0}
 p{margin:0}ul{margin:0;padding:0;list-style:none}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
@@ -106,7 +106,10 @@ p{margin:0}ul{margin:0;padding:0;list-style:none}
       <div class="pgrid">
         <a class="pcard" href="/tools/pcd-tools.html" data-hook="product-card-pcd">
           <div class="img has-photo" aria-hidden="true">
-            <img src="/assets/photography/products/pcd-tool.jpg" width="130" height="130" loading="lazy" decoding="async" alt="">
+            <picture>
+              <source srcset="/assets/photography/products/pcd-tool.webp" type="image/webp">
+              <img src="/assets/photography/products/pcd-tool.jpg" width="130" height="130" loading="lazy" decoding="async" alt="">
+            </picture>
           </div>
           <h3>PCD tools</h3>
           <p>Multi-step reamers and milling tools for aluminium and non-ferrous.</p>
@@ -114,7 +117,10 @@ p{margin:0}ul{margin:0;padding:0;list-style:none}
         </a>
         <a class="pcard" href="/tools/fine-boring-tools.html" data-hook="product-card-fine-boring">
           <div class="img has-photo" aria-hidden="true">
-            <img src="/assets/photography/products/fine-boring-lineup.jpg" width="130" height="130" loading="lazy" decoding="async" alt="">
+            <picture>
+              <source srcset="/assets/photography/products/fine-boring-lineup.webp" type="image/webp">
+              <img src="/assets/photography/products/fine-boring-lineup.jpg" width="130" height="130" loading="lazy" decoding="async" alt="">
+            </picture>
           </div>
           <h3>Fine boring</h3>
           <p>Vibration-free, high feed, smallest tolerances, extended service life.</p>
@@ -122,7 +128,10 @@ p{margin:0}ul{margin:0;padding:0;list-style:none}
         </a>
         <a class="pcard" href="/tools/iso-tools.html" data-hook="product-card-iso">
           <div class="img has-photo" aria-hidden="true">
-            <img src="/assets/photography/products/iso-tool.jpg" width="130" height="130" loading="lazy" decoding="async" alt="">
+            <picture>
+              <source srcset="/assets/photography/products/iso-tool.webp" type="image/webp">
+              <img src="/assets/photography/products/iso-tool.jpg" width="130" height="130" loading="lazy" decoding="async" alt="">
+            </picture>
           </div>
           <h3>ISO tools</h3>
           <p>High stock removal and large bore diameters with optimal tolerance.</p>
@@ -130,7 +139,10 @@ p{margin:0}ul{margin:0;padding:0;list-style:none}
         </a>
         <a class="pcard" href="/tools/adaptors.html" data-hook="product-card-adaptors">
           <div class="img has-photo" aria-hidden="true">
-            <img src="/assets/photography/products/adaptors-pair.jpg" width="130" height="130" loading="lazy" decoding="async" alt="">
+            <picture>
+              <source srcset="/assets/photography/products/adaptors-pair.webp" type="image/webp">
+              <img src="/assets/photography/products/adaptors-pair.jpg" width="130" height="130" loading="lazy" decoding="async" alt="">
+            </picture>
           </div>
           <h3>Adaptors</h3>
           <p>Sidelock, modular and special holders, gauged to the highest systems.</p>
@@ -138,7 +150,10 @@ p{margin:0}ul{margin:0;padding:0;list-style:none}
         </a>
         <a class="pcard" href="/tools/tool-setting-devices.html" data-hook="product-card-setting-devices">
           <div class="img has-photo" aria-hidden="true">
-            <img src="/assets/photography/products/setting-qa-room.jpg" width="130" height="130" loading="lazy" decoding="async" alt="">
+            <picture>
+              <source srcset="/assets/photography/products/setting-qa-room.webp" type="image/webp">
+              <img src="/assets/photography/products/setting-qa-room.jpg" width="130" height="130" loading="lazy" decoding="async" alt="">
+            </picture>
           </div>
           <h3>Tool setting devices</h3>
           <p>Setting fixtures, manual and hydraulic component fixtures for turnkey solutions.</p>

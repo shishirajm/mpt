@@ -31,7 +31,7 @@
 :root{--c-bg:#0B0F14;--c-surface:#121820;--c-line:#1E2932;--c-accent:#009EE0;--c-accent-deep:#04121B;--c-ice:#7DD3FC;--c-text:#EDEFF2;--c-text-mute:#9AA7B4;--c-text-dim:#74879A;--f-display:Oswald,"Arial Narrow","Helvetica Neue",system-ui,sans-serif;--f-body:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--f-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--fs-micro:.625rem;--fs-xs:.75rem;--fs-sm:.8125rem;--fs-base:.9375rem;--fs-lg:1.0625rem;--fs-2xl:2.125rem;--s-1:4px;--s-2:8px;--s-3:12px;--s-4:16px;--s-5:24px;--s-6:32px;--s-7:48px;--pad:18px;--max:1200px}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--c-bg);color:var(--c-text);font-family:var(--f-body);font-size:var(--fs-base);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img,svg{display:block;max-width:100%;height:auto}
+img,svg,picture{display:block;max-width:100%;height:auto}
 h1{font-family:var(--f-display);font-weight:600;text-transform:uppercase;line-height:1.05;margin:0}
 p{margin:0}ul{margin:0;padding:0;list-style:none}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
@@ -120,7 +120,10 @@ p{margin:0}ul{margin:0;padding:0;list-style:none}
           <p style="color:var(--c-text-mute);line-height:1.75"><b style="color:var(--c-text)">Prove out.</b> Cycle time optimisation and statistical parameters (Cpk) delivered with the tool, not after a support ticket.</p>
         </div>
         <figure class="photo">
-          <img src="/assets/photography/design-office.jpg" width="760" height="507" loading="lazy" decoding="async" alt="Design and planning engineers at workstations in the Peenya facility">
+          <picture>
+            <source srcset="/assets/photography/design-office.webp" type="image/webp">
+            <img src="/assets/photography/design-office.jpg" width="760" height="507" loading="lazy" decoding="async" alt="Design and planning engineers at workstations in the Peenya facility">
+          </picture>
           <figcaption>Design &amp; planning department</figcaption>
         </figure>
       </div>
@@ -138,7 +141,10 @@ p{margin:0}ul{margin:0;padding:0;list-style:none}
           <figcaption>PCD tip setting</figcaption>
         </figure>
         <figure class="photo">
-          <img src="/assets/photography/machining-action.jpg" width="230" height="230" loading="lazy" decoding="async" alt="Multi-step tool machining a component under coolant spray">
+          <picture>
+            <source srcset="/assets/photography/machining-action.webp" type="image/webp">
+            <img src="/assets/photography/machining-action.jpg" width="230" height="230" loading="lazy" decoding="async" alt="Multi-step tool machining a component under coolant spray">
+          </picture>
           <figcaption>Multi-step tool, in cut</figcaption>
         </figure>
       </div>

@@ -31,7 +31,7 @@
 :root{--c-bg:#0B0F14;--c-surface:#121820;--c-line:#1E2932;--c-accent:#009EE0;--c-accent-deep:#04121B;--c-ice:#7DD3FC;--c-text:#EDEFF2;--c-text-mute:#9AA7B4;--c-text-dim:#74879A;--f-display:Oswald,"Arial Narrow","Helvetica Neue",system-ui,sans-serif;--f-body:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--f-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--fs-micro:.625rem;--fs-xs:.75rem;--fs-sm:.8125rem;--fs-base:.9375rem;--fs-lg:1.0625rem;--fs-2xl:2.125rem;--s-1:4px;--s-2:8px;--s-3:12px;--s-4:16px;--s-5:24px;--s-6:32px;--s-7:48px;--pad:18px;--max:1200px}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--c-bg);color:var(--c-text);font-family:var(--f-body);font-size:var(--fs-base);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img,svg{display:block;max-width:100%;height:auto}
+img,svg,picture{display:block;max-width:100%;height:auto}
 h1{font-family:var(--f-display);font-weight:600;text-transform:uppercase;line-height:1.05;margin:0}
 p{margin:0}ul{margin:0;padding:0;list-style:none}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
@@ -114,11 +114,17 @@ p{margin:0}ul{margin:0;padding:0;list-style:none}
       <p style="color:var(--c-text-mute);max-width:68ch;line-height:1.75;margin-top:var(--s-4)">Mac Precitec India Pvt Ltd manufactures multi-step PCD reamers and milling tools that increase productivity and tool life on non-ferrous materials, built to the component's accuracies. The range includes Valve Seat Tools and Base Clamping Systems, and already runs at leading automobile and aviation manufacturers machining cylinder heads, valve housings and cooling channels.</p>
       <div class="igrid" style="margin-top:var(--s-6)">
         <figure class="photo">
-          <img src="/assets/photography/products/pcd-tool.jpg" width="560" height="747" loading="lazy" decoding="async" alt="Mac Precitec India Pvt Ltd PCD spot face tool on a BT taper holder">
+          <picture>
+            <source srcset="/assets/photography/products/pcd-tool.webp" type="image/webp">
+            <img src="/assets/photography/products/pcd-tool.jpg" width="560" height="747" loading="lazy" decoding="async" alt="Mac Precitec India Pvt Ltd PCD spot face tool on a BT taper holder">
+          </picture>
           <figcaption>PCD spot face tool</figcaption>
         </figure>
         <figure class="photo">
-          <img src="/assets/photography/products/pcd-range.jpg" width="620" height="820" loading="lazy" decoding="async" alt="A range of multi-step PCD reamer and milling tools on BT taper holders">
+          <picture>
+            <source srcset="/assets/photography/products/pcd-range.webp" type="image/webp">
+            <img src="/assets/photography/products/pcd-range.jpg" width="620" height="820" loading="lazy" decoding="async" alt="A range of multi-step PCD reamer and milling tools on BT taper holders">
+          </picture>
           <figcaption>Multi-step PCD range</figcaption>
         </figure>
       </div>

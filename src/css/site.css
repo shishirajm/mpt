@@ -64,7 +64,7 @@ body{
   font-family:var(--f-body);font-size:var(--fs-base);line-height:1.65;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
-img,svg{display:block;max-width:100%;height:auto}
+img,svg,picture{display:block;max-width:100%;height:auto}
 h1,h2,h3,h4{font-family:var(--f-display);font-weight:600;text-transform:uppercase;
   letter-spacing:-.01em;line-height:1.05;margin:0}
 p{margin:0}
