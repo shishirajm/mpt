@@ -8,6 +8,7 @@ module.exports = defineConfig({
   snapshotDir: __dirname + '/screenshots',
   snapshotPathTemplate: '{snapshotDir}/{arg}-{projectName}{ext}',
   fullyParallel: true,
+  workers: 2,
   reporter: [['html', { outputFolder: __dirname + '/../../playwright-report', open: 'never' }]],
   expect: {
     toHaveScreenshot: { maxDiffPixelRatio: 0.01 },

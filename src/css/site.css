@@ -367,6 +367,32 @@ ul{margin:0;padding:0;list-style:none}
 .map-note h2{font-size:var(--fs-sm);letter-spacing:.1em;color:var(--c-text-dim);margin:0 0 var(--s-3)}
 
 /* ============================================================
+   PHOTO — real photography, always below the fold
+   ============================================================ */
+.photo{overflow:hidden;background:var(--c-surface-2)}
+.photo img{width:100%;height:auto;display:block}
+.photo figcaption{
+  font-family:var(--f-mono);font-size:var(--fs-micro);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--c-text-dim);padding-top:var(--s-2);
+}
+
+/* ---------- Photo pairs/grids (infrastructure, process) ---------- */
+.igrid{display:grid;gap:var(--s-5)}
+
+/* ============================================================
+   MILESTONES — company timeline
+   ============================================================ */
+.milestones{display:grid;gap:var(--s-5);border-top:1px solid var(--c-line);padding-top:var(--s-5)}
+.milestones>div{padding-bottom:var(--s-4);border-bottom:1px solid var(--c-line)}
+.milestones em{
+  font-style:normal;font-family:var(--f-mono);font-size:var(--fs-micro);
+  color:var(--c-text-dim);letter-spacing:.16em;display:block;margin-bottom:var(--s-2);
+}
+.milestones b{font-family:var(--f-display);font-weight:400;font-size:var(--fs-xl);
+  color:var(--c-accent);display:block}
+.milestones p{color:var(--c-text-mute);font-size:var(--fs-sm);margin-top:var(--s-2);line-height:1.6}
+
+/* ============================================================
    404
    ============================================================ */
 .err{padding:var(--s-9) 0;text-align:center}
@@ -397,6 +423,8 @@ ul{margin:0;padding:0;list-style:none}
   .form-card{padding:var(--s-6)}
   .dl{grid-template-columns:repeat(2,1fr)}
   .page-head h1{font-size:var(--fs-2xl)}
+  .igrid{grid-template-columns:repeat(2,1fr)}
+  .milestones{grid-template-columns:repeat(2,1fr)}
 }
 
 /* ============================================================
@@ -427,6 +455,9 @@ ul{margin:0;padding:0;list-style:none}
   .mobbar{display:none}
   .band,.range{padding:var(--s-8) 0}
   .tablist label{padding:var(--s-3) var(--s-5)}
+  .milestones{grid-template-columns:repeat(5,1fr)}
+  .milestones>div{border-bottom:0;border-right:1px solid var(--c-line);padding-right:var(--s-4)}
+  .milestones>div:last-child{border-right:0}
 }
 
 /* Active tab styling — after :checked, needs the sibling label chain */

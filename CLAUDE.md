@@ -55,13 +55,14 @@ Do not invent capacities, certifications, client names, awards or years. Everyth
 ```
 Registered Office: B-291(a), 7th Main, Peenya 2nd Stage,
                    Peenya Industrial Area, Bangalore – 560058, Karnataka, India
-Sales:             +91 99000 89435 · +91 99000 89440
+Sales:             +91 99000 89435 · +91 99000 89436 · +91 99000 89440
+Landline:          080 2836 9097
 Chennai region:    +91 98416 79943
 NCR region:        +91 98186 76627
 Email:             sales@macprecitecindia.com
 ```
 
-Two unresolved items — do not guess: the supplied list repeated `9900089435` twice while the profile PDF shows `9900089436` as the third number; and landline `080 2836 9097` appears in the profile but not the supplied list.
+Resolved: the owner-supplied list originally repeated `9900089435` twice with no landline. The company's own profile PDF (`docs/Macprecitec India - Profile.pdf`, gitignored, not public) lists all four numbers together on its Contact page — `89436` is a genuine third mobile, and the landline `080 2836 9097` is part of the company's own published contact block. Both are now live on the site.
 
 ---
 
@@ -135,13 +136,13 @@ Examples of the register: "Four operations. One pass." · "Send us the hardest h
 
 | Metric | Limit | Current (home) |
 |---|---|---|
-| HTML + CSS + JS per page | 100 KB | 43.1 KB |
+| HTML + CSS + JS per page | 100 KB | 47.6 KB |
 | JavaScript | 20 KB | 3.0 KB |
-| CSS | 30 KB | 19.2 KB |
+| CSS | 30 KB | 21.2 KB |
 | Inlined critical CSS | 14 KB | 5.8 KB |
 | Fonts | 2 files / 60 KB | 2 / 24.4 KB |
-| Images per page | 250 KB | 12.7 KB (logo SVG) |
-| HTTP requests | 20 | 7 |
+| Images per page | 250 KB | 24.6 KB (1 photo + logo SVG) |
+| HTTP requests | 20 | 8 |
 | Third-party requests | **0** | 0 |
 | LCP (mobile 4G) | < 1.5 s | text LCP |
 | CLS | < 0.05 | **0** |
@@ -229,12 +230,13 @@ One codebase, three *designed* states — each reviewed and signed off separatel
 
 ```
 src/                   everything that ships — this is the web root
-├── index.html  contact.html  404.html
-├── css/site.css          whole stylesheet (19KB)
+├── index.html  contact.html  company.html  engineering.html  404.html
+├── css/site.css          whole stylesheet
 ├── js/app.js             nav enhancement — site works without it
 ├── js/analytics.js       measurement layer, only file naming a vendor
 ├── assets/fonts/         oswald-400.woff2, oswald-600.woff2
 ├── assets/brand/         mpi-logo.svg + on-dark + mono-white, favicons, source .cdr
+├── assets/photography/   real facility/team/process photos, sourced from the company profile PDF
 └── robots.txt  sitemap.xml  site.webmanifest
 tests/visual/           dev-only Playwright visual regression tests (not shipped)
 ```
@@ -248,7 +250,7 @@ infrastructure that never touches the shipped site.
 
 Preview: `python3 -m http.server 8000 --directory src`. A `file://` open won't work — paths are root-absolute.
 
-Nav is currently `Tools · Sectors · Engineering · Company · Contact` + Enquire. Tools/Sectors/Engineering/Company are **anchors on the home page** until those pages exist — never ship a dead link.
+Nav is currently `Tools · Sectors · Engineering · Company · Contact` + Enquire. Engineering and Company are real pages (`/engineering.html`, `/company.html`). Tools and Sectors are still **anchors on the home page** until their dedicated pages exist (see §14) — never ship a dead link.
 
 ---
 
@@ -283,9 +285,10 @@ Nav is currently `Tools · Sectors · Engineering · Company · Contact` + Enqui
 ## 14. Outstanding — blocked or needs the owner
 
 - [ ] **Enquiry form has no endpoint** (`action="#"`). A static site needs a form service before it can deliver anything. **Blocks launch.**
-- [ ] **Product photography** — PCD tools, fine boring, ISO tools, adaptors, shop floor. Image areas are designed placeholders.
-- [ ] Confirm the third phone number and whether the landline appears (§3).
+- [x] ~~Product photography~~ — Home, Company and Engineering now use real facility/team/process photos extracted from `docs/Macprecitec India - Profile.pdf`. **Resolution ceiling**: every extracted image was already JPEG-compressed once for the PDF; largest usable is ~800px wide. Fine for the current below-the-fold placements, but **request original-resolution files** before using any of them as a large hero crop or on the still-outstanding product/sector pages.
+- [ ] Product photography specific to each of the 5 tool categories (PCD, fine boring, ISO, adaptors, tool setting devices) for the Phase 2 product pages — the profile PDF has real studio shots of MP-branded tooling for this; not yet extracted/placed.
+- [x] ~~Confirm the third phone number and whether the landline appears~~ — resolved via the profile PDF, see §3.
 - [ ] Privacy policy page — prerequisite before any analytics goes live.
 - [ ] Open Graph share image at `src/assets/brand/og-home.png` (referenced, not yet created).
-- [ ] Remaining pages: Tools (+ 5 product pages), Sectors (+ 6), Engineering, Company.
+- [ ] Remaining pages: Tools index + 5 product pages, Sectors (6 sectors). Company and Engineering are done.
 - [ ] Hosting undecided — keep output host-agnostic; no serverless functions, no host-specific header syntax in pages. Whatever host is chosen must be configurable to publish `src/` as the document root (see §11).

@@ -18,12 +18,15 @@ Plain hand-authored HTML + CSS + minimal vanilla JavaScript.
 src/                   Everything that ships — this is the web root
 ├── index.html         Home
 ├── contact.html       Contact & enquiry
+├── company.html       About, vision, milestones, team, infrastructure
+├── engineering.html   Design → manufacture → prove-out process
 ├── 404.html           Not found
-├── css/site.css       The whole stylesheet (19KB)
+├── css/site.css       The whole stylesheet
 ├── js/app.js          Nav enhancement — the site works without it
 ├── js/analytics.js    Measurement layer; the ONLY file that names a vendor
 ├── assets/fonts/      Oswald 400 + 600, self-hosted, subset (24KB total)
 ├── assets/brand/      Logo (SVG, 3 surface variants), favicons, source .cdr
+├── assets/photography/ Real facility/team/process photos (see note below)
 ├── robots.txt         Allows reputable AI crawlers
 ├── sitemap.xml        Update when adding a page
 └── site.webmanifest
@@ -34,6 +37,12 @@ tests/visual/          Dev-only Playwright visual regression tests (not shipped)
 serve `src/` as the site's document/publish root (see "Deploying" below).
 Nothing outside `src/` (tests, `package.json`, `node_modules/`) is part of the
 shipped site.
+
+`assets/photography/` images were extracted from the company's internal
+profile PDF (`docs/`, gitignored, not public) — real MPI facility/team/process
+photos, but each was already JPEG-compressed once for that PDF. Fine for
+current below-the-fold use; request original-resolution files before using
+any of them as a large hero crop.
 
 ## Local preview
 
@@ -69,11 +78,12 @@ the actual regression check, the tool only flags *that* something changed.
 
 | Metric | Limit | Current (home) |
 |---|---|---|
-| HTML + CSS + JS per page | 100 KB | 43.1 KB |
+| HTML + CSS + JS per page | 100 KB | 47.6 KB |
 | JavaScript | 20 KB | 3.0 KB |
-| CSS | 30 KB | 19.2 KB |
+| CSS | 30 KB | 21.2 KB |
+| Images per page | 250 KB | 24.6 KB (1 photo + logo) |
 | Fonts | 2 files / 60 KB | 2 files / 24.4 KB |
-| HTTP requests | 20 | 7 |
+| HTTP requests | 20 | 8 |
 | Third-party requests | 0 | 0 |
 
 A page that breaks a budget does not ship. If a design requirement and a budget
