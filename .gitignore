@@ -4,5 +4,6 @@ node_modules/
 .vscode/
 .idea/
 Thumbs.db
+docs/
 test-results/
 playwright-report/
