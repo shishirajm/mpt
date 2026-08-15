@@ -38,8 +38,11 @@ p{margin:0}ul{margin:0;padding:0;list-style:none}
 :focus-visible{outline:2px solid var(--c-accent);outline-offset:3px}
 .site-head{border-bottom:1px solid var(--c-line);position:relative;z-index:5}
 .site-head .wrap{display:flex;align-items:center;gap:var(--s-4);min-height:64px}
-.brand{display:flex;align-items:center;margin-right:auto;text-decoration:none}
-.brand img{width:120px}
+.brand{display:flex;align-items:center;gap:var(--s-3);margin-right:auto;text-decoration:none}
+.brand-mark{width:44px;flex:none}
+.brand-text{display:flex;flex-direction:column;gap:2px;line-height:1.05}
+.brand-text b{font-family:var(--f-display);font-weight:600;text-transform:uppercase;letter-spacing:.01em;color:var(--c-text);font-size:1.125rem}
+.brand-text em{font-style:normal;font-family:var(--f-mono);font-size:var(--fs-micro);letter-spacing:.16em;text-transform:uppercase;color:var(--c-ice)}
 .nav-check{appearance:none;-webkit-appearance:none;margin:0;width:44px;height:44px;border:1px solid var(--c-line);cursor:pointer;background:linear-gradient(var(--c-accent),var(--c-accent)) center 14px/18px 2px no-repeat,linear-gradient(var(--c-accent),var(--c-accent)) center 21px/18px 2px no-repeat,linear-gradient(var(--c-accent),var(--c-accent)) center 28px/18px 2px no-repeat}
 .nav-panel{display:none;position:absolute;left:0;right:0;top:100%;background:var(--c-surface);border-bottom:1px solid var(--c-line);padding:var(--s-3) var(--pad) var(--s-5)}
 .nav-panel a{display:block;padding:var(--s-3) 0;min-height:44px;color:var(--c-text);text-decoration:none;font-size:var(--fs-sm);font-weight:600;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid var(--c-line)}
@@ -53,7 +56,7 @@ p{margin:0}ul{margin:0;padding:0;list-style:none}
 .crumb{font-family:var(--f-mono);font-size:var(--fs-micro);letter-spacing:.14em;text-transform:uppercase;color:var(--c-text-dim);margin-bottom:var(--s-4)}
 .crumb a{color:var(--c-text-dim);text-decoration:none}
 @media (min-width:768px){:root{--pad:34px;--fs-2xl:2.75rem}}
-@media (min-width:1024px){:root{--fs-2xl:3.25rem}.site-head .wrap{min-height:76px;gap:var(--s-6)}.brand img{width:150px}.nav-check{display:none}.nav-panel{display:flex;position:static;align-items:center;gap:var(--s-5);background:none;border:0;padding:0}.nav-panel a{border-bottom:0;padding:var(--s-2) 0;font-size:var(--fs-xs);color:#C3CBD4;min-height:auto}.nav-panel a.enquire{margin-top:0;padding:var(--s-3) var(--s-4);min-height:44px;display:flex;align-items:center}}
+@media (min-width:1024px){:root{--fs-2xl:3.25rem}.site-head .wrap{min-height:76px;gap:var(--s-6)}.brand-mark{width:56px}.brand-text b{font-size:1.75rem}.brand-text em{font-size:.75rem}.nav-check{display:none}.nav-panel{display:flex;position:static;align-items:center;gap:var(--s-5);background:none;border:0;padding:0}.nav-panel a{border-bottom:0;padding:var(--s-2) 0;font-size:var(--fs-xs);color:#C3CBD4;min-height:auto}.nav-panel a.enquire{margin-top:0;padding:var(--s-3) var(--s-4);min-height:44px;display:flex;align-items:center}}
 </style>
 <link rel="preload" href="/css/site.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/css/site.css"></noscript>
@@ -71,7 +74,8 @@ p{margin:0}ul{margin:0;padding:0;list-style:none}
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="/" data-hook="nav-brand-home" aria-label="Mac Precitec India — home">
-      <img src="/assets/brand/mpi-logo-on-dark.svg" alt="Mac Precitec India — precision tooling" width="150" height="30">
+      <img class="brand-mark" src="/assets/brand/mpi-mark.svg" alt="" width="44" height="38">
+      <span class="brand-text"><b>Mac Precitec India</b><em>Precision tooling</em></span>
     </a>
     <input class="nav-check" type="checkbox" id="navcheck" aria-label="Open navigation menu" data-hook="nav-toggle">
       <nav class="nav-panel" aria-label="Primary">
