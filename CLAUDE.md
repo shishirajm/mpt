@@ -61,7 +61,7 @@ NCR region:        +91 98186 76627
 Email:             sales@macprecitecindia.com
 ```
 
-Resolved: the owner-supplied list originally repeated `9900089435` twice. The company's own profile PDF (`docs/Macprecitec India - Profile.pdf`, gitignored, not public) confirmed `89436` as a genuine third mobile, now live on the site. The PDF's contact block also lists a landline (080 2836 9097), but that's been removed from the site's contact page — mobiles only.
+Resolved: the owner-supplied list originally repeated `9900089435` twice. The company's own profile PDF (`docs/Macprecitec India - Profile.pdf`, gitignored, not public) confirmed `89436` as a genuine third mobile, now live on the site. The PDF's contact block also lists a landline, but it's been removed from the site — mobiles only.
 
 ---
 

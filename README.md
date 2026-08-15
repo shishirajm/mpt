@@ -109,7 +109,6 @@ collide, the design changes.
 - [ ] **Enquiry form has no endpoint** — `action="#"`. Needs a form service.
 - [ ] **Product photography** — image areas are designed placeholders.
 - [ ] Confirm third phone number (supplied list repeats 9900089435; profile PDF shows 9900089436)
-- [ ] Confirm whether landline 080 2836 9097 should appear
 - [ ] Privacy policy page — required before any analytics goes live
 - [ ] Open Graph share image (`src/assets/brand/og-home.png`)
 - [ ] Remaining pages: Tools, Sectors, Engineering, Company
