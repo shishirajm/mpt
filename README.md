@@ -15,27 +15,55 @@ Plain hand-authored HTML + CSS + minimal vanilla JavaScript.
 ## Structure
 
 ```
-index.html            Home
-contact.html          Contact & enquiry
-404.html              Not found
-css/site.css          The whole stylesheet (19KB)
-js/app.js             Nav enhancement — the site works without it
-js/analytics.js       Measurement layer; the ONLY file that names a vendor
-assets/fonts/         Oswald 400 + 600, self-hosted, subset (24KB total)
-assets/brand/         Logo (SVG, 3 surface variants), favicons, source .cdr
-robots.txt            Allows reputable AI crawlers
-sitemap.xml           Update when adding a page
-site.webmanifest
+src/                   Everything that ships — this is the web root
+├── index.html         Home
+├── contact.html       Contact & enquiry
+├── 404.html           Not found
+├── css/site.css       The whole stylesheet (19KB)
+├── js/app.js          Nav enhancement — the site works without it
+├── js/analytics.js    Measurement layer; the ONLY file that names a vendor
+├── assets/fonts/      Oswald 400 + 600, self-hosted, subset (24KB total)
+├── assets/brand/      Logo (SVG, 3 surface variants), favicons, source .cdr
+├── robots.txt         Allows reputable AI crawlers
+├── sitemap.xml        Update when adding a page
+└── site.webmanifest
+tests/visual/          Dev-only Playwright visual regression tests (not shipped)
 ```
+
+`src/` is deployed as-is with no build step — whatever hosting is chosen must
+serve `src/` as the site's document/publish root (see "Deploying" below).
+Nothing outside `src/` (tests, `package.json`, `node_modules/`) is part of the
+shipped site.
 
 ## Local preview
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8000 --directory src
 # then open http://localhost:8000
 ```
 
-A plain file:// open will not work — pages use root-absolute paths (`/css/site.css`).
+A plain file:// open will not work — pages use root-absolute paths (`/css/site.css`),
+which resolve correctly once `src/` is served as the root.
+
+## Visual regression testing
+
+Dev-only tooling under `tests/visual/` — a `package.json` and `node_modules/`
+exist for this alone and never ship (the site itself still has zero build
+step). It screenshots all three live pages at every responsive state from
+§7 (320/390/768/1024/1280/1440/1920) in Chromium and WebKit, and diffs
+against committed baselines in `tests/visual/screenshots/`.
+
+```bash
+npm install
+npx playwright install --with-deps chromium webkit
+
+npm run test:visual           # run — fails on any pixel diff > 1%
+npm run test:visual:update    # regenerate baselines after an intentional change
+```
+
+After `test:visual:update`, review the diffs (`git diff --stat tests/visual/screenshots/`
+plus opening a few images) before committing new baselines — that review is
+the actual regression check, the tool only flags *that* something changed.
 
 ## Budgets — do not exceed
 
@@ -71,7 +99,7 @@ collide, the design changes.
 - [ ] Confirm third phone number (supplied list repeats 9900089435; profile PDF shows 9900089436)
 - [ ] Confirm whether landline 080 2836 9097 should appear
 - [ ] Privacy policy page — required before any analytics goes live
-- [ ] Open Graph share image (`assets/brand/og-home.png`)
+- [ ] Open Graph share image (`src/assets/brand/og-home.png`)
 - [ ] Remaining pages: Tools, Sectors, Engineering, Company
 
 ## Deploying to GitHub Pages
@@ -79,3 +107,9 @@ collide, the design changes.
 Paths are root-absolute, which is correct for `macprecitecindia.com`. A **project**
 Pages site (`username.github.io/repo-name/`) would break them. Either use a custom
 domain / user site, or convert paths to relative first.
+
+Because the site now lives in `src/` rather than the repo root, plain GitHub Pages
+(which can only publish the repo root or `/docs`) needs one of:
+- A GitHub Actions Pages deploy step that publishes the `src/` folder, or
+- Any other static host (Netlify, Vercel, Cloudflare Pages, etc.) with its
+  **publish/output directory set to `src`** — no build command needed.

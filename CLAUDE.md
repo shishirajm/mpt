@@ -228,17 +228,25 @@ One codebase, three *designed* states — each reviewed and signed off separatel
 ## 11. Repository
 
 ```
-index.html  contact.html  404.html
-css/site.css          whole stylesheet (19KB)
-js/app.js             nav enhancement — site works without it
-js/analytics.js       measurement layer, only file naming a vendor
-assets/fonts/         oswald-400.woff2, oswald-600.woff2
-assets/brand/         mpi-logo.svg + on-dark + mono-white, favicons, source .cdr
-robots.txt  sitemap.xml  site.webmanifest
-_reference/           original 5-direction mockup (not part of the site)
+src/                   everything that ships — this is the web root
+├── index.html  contact.html  404.html
+├── css/site.css          whole stylesheet (19KB)
+├── js/app.js             nav enhancement — site works without it
+├── js/analytics.js       measurement layer, only file naming a vendor
+├── assets/fonts/         oswald-400.woff2, oswald-600.woff2
+├── assets/brand/         mpi-logo.svg + on-dark + mono-white, favicons, source .cdr
+└── robots.txt  sitemap.xml  site.webmanifest
+tests/visual/           dev-only Playwright visual regression tests (not shipped)
 ```
 
-Preview: `python3 -m http.server 8000`. A `file://` open won't work — paths are root-absolute.
+`src/` is the deployable unit — whatever hosts the site must serve `src/` as
+the document/publish root. Nothing outside `src/` (tests, `package.json`,
+`node_modules/`) ships. This does not change §4's stack lock: `src/` itself
+still has no build step, no framework, no package manager — it's still edited
+directly. The npm/Playwright tooling under `tests/` is separate dev-only
+infrastructure that never touches the shipped site.
+
+Preview: `python3 -m http.server 8000 --directory src`. A `file://` open won't work — paths are root-absolute.
 
 Nav is currently `Tools · Sectors · Engineering · Company · Contact` + Enquire. Tools/Sectors/Engineering/Company are **anchors on the home page** until those pages exist — never ship a dead link.
 
@@ -278,6 +286,6 @@ Nav is currently `Tools · Sectors · Engineering · Company · Contact` + Enqui
 - [ ] **Product photography** — PCD tools, fine boring, ISO tools, adaptors, shop floor. Image areas are designed placeholders.
 - [ ] Confirm the third phone number and whether the landline appears (§3).
 - [ ] Privacy policy page — prerequisite before any analytics goes live.
-- [ ] Open Graph share image at `assets/brand/og-home.png` (referenced, not yet created).
+- [ ] Open Graph share image at `src/assets/brand/og-home.png` (referenced, not yet created).
 - [ ] Remaining pages: Tools (+ 5 product pages), Sectors (+ 6), Engineering, Company.
-- [ ] Hosting undecided — keep output host-agnostic; no serverless functions, no host-specific header syntax in pages.
+- [ ] Hosting undecided — keep output host-agnostic; no serverless functions, no host-specific header syntax in pages. Whatever host is chosen must be configurable to publish `src/` as the document root (see §11).

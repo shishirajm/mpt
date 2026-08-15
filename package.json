@@ -1,0 +1,12 @@
+{
+  "name": "mpi-website-tests",
+  "private": true,
+  "description": "Dev-only visual regression tooling for the Mac Precitec India site. Not part of the shipped site.",
+  "scripts": {
+    "test:visual": "playwright test -c tests/visual/playwright.config.js",
+    "test:visual:update": "playwright test -c tests/visual/playwright.config.js --update-snapshots"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0"
+  }
+}
