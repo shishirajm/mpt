@@ -1,0 +1,13 @@
+{
+  "name": "Mac Precitec India",
+  "short_name": "Mac Precitec",
+  "description": "Multi-step precision cutting tools — PCD, fine boring and ISO tools.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0F14",
+  "theme_color": "#0B0F14",
+  "icons": [
+    { "src": "/assets/brand/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/brand/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
