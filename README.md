@@ -80,12 +80,12 @@ the actual regression check, the tool only flags *that* something changed.
 
 | Metric | Limit | Current (home) |
 |---|---|---|
-| HTML + CSS + JS per page | 100 KB | 47.6 KB |
+| HTML + CSS + JS per page | 100 KB | 50.2 KB |
 | JavaScript | 20 KB | 3.0 KB |
-| CSS | 30 KB | 21.2 KB |
-| Images per page | 250 KB | 24.6 KB (1 photo + logo) |
+| CSS | 30 KB | 22.1 KB |
+| Images per page | 250 KB | 123.1 KB (8 photos + logo) |
 | Fonts | 2 files / 60 KB | 2 files / 24.4 KB |
-| HTTP requests | 20 | 8 |
+| HTTP requests | 20 | 15 |
 | Third-party requests | 0 | 0 |
 
 A page that breaks a budget does not ship. If a design requirement and a budget

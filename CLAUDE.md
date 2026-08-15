@@ -136,13 +136,13 @@ Examples of the register: "Four operations. One pass." · "Send us the hardest h
 
 | Metric | Limit | Current (home) |
 |---|---|---|
-| HTML + CSS + JS per page | 100 KB | 47.6 KB |
+| HTML + CSS + JS per page | 100 KB | 50.2 KB |
 | JavaScript | 20 KB | 3.0 KB |
-| CSS | 30 KB | 21.2 KB |
+| CSS | 30 KB | 22.1 KB |
 | Inlined critical CSS | 14 KB | 5.8 KB |
 | Fonts | 2 files / 60 KB | 2 / 24.4 KB |
-| Images per page | 250 KB | 24.6 KB (1 photo + logo SVG) |
-| HTTP requests | 20 | 8 |
+| Images per page | 250 KB | 123.1 KB (8 photos + logo SVG) |
+| HTTP requests | 20 | 15 |
 | Third-party requests | **0** | 0 |
 | LCP (mobile 4G) | < 1.5 s | text LCP |
 | CLS | < 0.05 | **0** |
