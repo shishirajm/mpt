@@ -1,4 +1,4 @@
-/* Mac Precitec India Pvt Ltd — measurement layer.
+/* Mac Precitec India Private Limited — measurement layer.
    The ONLY file that names an analytics vendor. Enabling Hotjar is a
    change to VENDORS below; no HTML file is ever touched.
    See claude/project-direction.md section 11. */

@@ -1,4 +1,4 @@
-/* Mac Precitec India Pvt Ltd — interface behaviour.
+/* Mac Precitec India Private Limited — interface behaviour.
    The site is fully functional without this file. */
 (function () {
   'use strict';
