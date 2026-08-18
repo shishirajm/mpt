@@ -360,6 +360,9 @@ ul{margin:0;padding:0;list-style:none}
 .site-foot a:hover{color:var(--c-accent);text-decoration:underline}
 .site-foot li{padding:var(--s-1) 0}
 .site-foot address{font-style:normal;color:var(--c-text-mute);font-size:var(--fs-sm);line-height:1.7}
+.foot-logo{display:inline-block;background:#fff;padding:var(--s-2) var(--s-3);
+  border-radius:6px;margin:0 0 var(--s-3)}
+.foot-logo img{width:240px;height:36px;display:block}
 .policy-links{margin-top:var(--s-5);display:flex;flex-wrap:wrap;gap:var(--s-4);font-size:var(--fs-xs)}
 .policy-links a{color:var(--c-text-dim)}
 .policy-links a:hover{color:var(--c-accent)}
