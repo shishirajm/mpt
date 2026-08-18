@@ -24,6 +24,18 @@ for (const page of pages) {
       await browserPage.setViewportSize({ width: viewport.width, height: viewport.height });
       await browserPage.goto(page.path, { waitUntil: 'networkidle' });
       await browserPage.evaluate(() => document.fonts.ready);
+      // Scroll-reveal (.reveal, see js/app.js) only reveals content on real
+      // intersection — a fullPage screenshot doesn't scroll far enough on
+      // its own to trigger it, so walk the page first, same as a reader would.
+      await browserPage.evaluate(async () => {
+        const step = Math.max(window.innerHeight, 200);
+        for (let y = 0; y < document.body.scrollHeight; y += step) {
+          window.scrollTo(0, y);
+          await new Promise((r) => requestAnimationFrame(r));
+        }
+        window.scrollTo(0, 0);
+        await new Promise((r) => requestAnimationFrame(r));
+      });
       await expect(browserPage).toHaveScreenshot(`${page.name}-${viewport.name}.png`, {
         fullPage: true,
         animations: 'disabled',
