@@ -319,6 +319,28 @@ ul{margin:0;padding:0;list-style:none}
 .proof span{font-size:var(--fs-sm);color:#8D9AA6;display:block;margin-top:var(--s-2);line-height:1.5}
 
 /* ============================================================
+   CLIENTS — reuses the proof strip's hairline/mono-label grammar.
+   flex-wrap, not a fixed grid, so adding a name is a one-line change.
+   ============================================================ */
+.client-strip{
+  border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line);
+  padding:var(--s-6) var(--pad);text-align:center;
+}
+.client-strip-label{
+  display:block;font-family:var(--f-mono);font-size:var(--fs-micro);
+  letter-spacing:.16em;text-transform:uppercase;color:var(--c-text-dim);
+  margin-bottom:var(--s-5);
+}
+.client-list{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:var(--s-5) var(--s-6);
+}
+.client-list li{
+  font-family:var(--f-display);font-weight:400;font-size:var(--fs-lg);
+  text-transform:uppercase;letter-spacing:.02em;color:var(--c-text-mute);
+}
+
+/* ============================================================
    CLOSING CTA
    ============================================================ */
 .cend{padding:var(--s-8) 0;text-align:center;
