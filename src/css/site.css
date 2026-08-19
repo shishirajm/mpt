@@ -450,6 +450,74 @@ ul{margin:0;padding:0;list-style:none}
 /* ---------- Photo pairs/grids (infrastructure, process) ---------- */
 .igrid{display:grid;gap:var(--s-5)}
 
+/* ---------- Featured tools — per-tool multi-angle galleries ---------- */
+.tool-set{padding-top:var(--s-6);margin-top:var(--s-6);border-top:1px solid var(--c-line)}
+.tool-set:first-child{padding-top:0;margin-top:0;border-top:0}
+.tool-set h3{font-size:var(--fs-lg);font-weight:400;margin:0 0 var(--s-2)}
+.tool-set .spec{
+  font-family:var(--f-mono);font-size:var(--fs-micro);letter-spacing:.1em;
+  text-transform:uppercase;color:var(--c-ice);margin:0 0 var(--s-4);
+}
+.tool-gallery{display:grid;grid-template-columns:1fr;gap:var(--s-4)}
+.tool-gallery .photo{aspect-ratio:4/3}
+.tool-gallery .photo img{width:100%;height:100%;object-fit:cover}
+
+.gallery-hint{color:var(--c-text-mute);font-size:var(--fs-sm);margin:0 0 var(--s-5)}
+
+/* Zoom trigger — the label bar is always visible (mobile has no hover) so
+   the affordance never depends on a hover-only cue, per §7. */
+.zoom{display:block;position:relative;cursor:zoom-in}
+.zoom:focus-visible{outline:2px solid var(--c-accent);outline-offset:2px}
+.zoom-label{
+  position:absolute;left:0;right:0;bottom:0;
+  background:rgba(11,15,20,.82);color:#fff;
+  font-family:var(--f-mono);font-size:var(--fs-micro);letter-spacing:.14em;text-transform:uppercase;
+  padding:var(--s-2) var(--s-3);display:flex;align-items:center;gap:var(--s-2);
+  pointer-events:none;
+}
+.zoom-label svg{flex:none}
+@media (hover:hover){
+  .zoom{overflow:hidden}
+  .zoom img{transition:transform .3s ease-out}
+  .zoom:hover img,.zoom:focus-visible img{transform:scale(1.06)}
+  .zoom:hover .zoom-label,.zoom:focus-visible .zoom-label{background:var(--c-accent);color:var(--c-accent-deep)}
+}
+@media (prefers-reduced-motion:reduce){
+  .zoom img{transition:none}
+}
+
+/* Lightbox — CSS :target only, no JS required to open or close */
+.lightbox{
+  display:none;position:fixed;inset:0;z-index:70;padding:var(--s-5);
+}
+.lightbox:target{display:flex;align-items:center;justify-content:center}
+.lightbox-backdrop{position:absolute;inset:0;background:rgba(11,15,20,.95)}
+.lightbox-frame{position:relative;z-index:1;max-width:92vw;text-align:center}
+.lightbox-frame picture{max-width:none;height:auto}
+.lightbox-frame img{
+  display:block;margin:0 auto;max-width:92vw;max-height:78vh;width:auto;height:auto;
+}
+.lightbox-frame figcaption{
+  font-family:var(--f-mono);font-size:var(--fs-micro);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--c-text-mute);padding-top:var(--s-3);
+}
+.lightbox-close{
+  position:absolute;top:var(--s-4);right:var(--s-4);z-index:2;
+  width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+  background:var(--c-surface);border:1px solid var(--c-line);color:var(--c-text);
+  font-size:1.25rem;line-height:1;text-decoration:none;
+}
+.lightbox-close:hover{border-color:var(--c-accent);color:var(--c-accent)}
+.lightbox-nav{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:2;
+  width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+  background:var(--c-surface);border:1px solid var(--c-line);color:var(--c-text);
+  font-size:1.75rem;line-height:1;text-decoration:none;
+}
+.lightbox-nav:hover{border-color:var(--c-accent);color:var(--c-accent)}
+.lightbox-prev{left:var(--s-4)}
+.lightbox-next{right:var(--s-4)}
+
 /* ============================================================
    MILESTONES — company timeline
    ============================================================ */
@@ -499,6 +567,7 @@ ul{margin:0;padding:0;list-style:none}
   .page-head h1{font-size:var(--fs-2xl)}
   .igrid{grid-template-columns:repeat(2,1fr)}
   .milestones{grid-template-columns:repeat(2,1fr)}
+  .tool-gallery{grid-template-columns:repeat(3,1fr)}
 }
 
 /* ============================================================
