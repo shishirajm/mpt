@@ -140,8 +140,8 @@ Examples of the register: "Four operations. One pass." · "Send us the hardest h
 | CSS | 30 KB | 22.1 KB |
 | Inlined critical CSS | 14 KB | 5.8 KB |
 | Fonts | 2 files / 60 KB | 2 / 24.4 KB |
-| Images per page | 250 KB | 123.1 KB (8 photos + logo SVG) |
-| HTTP requests | 20 | 15 |
+| Images per page | 500 KB | 76.7 KB (home); Featured-tools gallery pages run 83–392 KB depending on gallery size |
+| HTTP requests | 20 | 14 |
 | Third-party requests | **0** | 0 |
 | LCP (mobile 4G) | < 1.5 s | text LCP |
 | CLS | < 0.05 | **0** |
@@ -281,6 +281,7 @@ Nav is `Tools · Sectors · Engineering · Company · Contact` + Enquire — eve
 - **The deep blue `#006AB3` is invisible on the dark ground.** Use `mpi-logo-on-dark.svg` (white wordmark) on `--c-bg`, `mpi-logo.svg` on white.
 - **Three mockup colours failed contrast** and were corrected: rail step labels `#5F7080`→`#74879A`, inactive tabs `#7B8794`→`#54626E`, band link `#0077AA`→`#00608C`. Don't restore the mockup values.
 - **Paths are root-absolute** (`/css/site.css`) — correct for `macprecitecindia.com`, but a GitHub Pages *project* URL (`user.github.io/repo/`) will serve an unstyled page. Use a custom domain, a user site, or convert to relative.
+- **`cwebp` silently drops the EXIF orientation tag; `sips` preserves it.** Resizing a phone/DSLR photo with a rotation tag (very common — most of `docs/sort_photos/` carries orientation 6 or 8) through `sips --resampleWidth` then `cwebp` produces a `.jpg` that still displays correctly (tag intact) and a `.webp` that renders sideways/upside-down (tag gone) — `<picture>` serves the broken `.webp` to every modern browser first. Symptom looked like a bad crop/composition, not a rotation bug. Fix: load with Pillow and call `ImageOps.exif_transpose()` (bakes in the correct rotation, strips the tag) *before* resizing/exporting either format — never resize a rotation-tagged source with plain `sips`.
 
 ---
 
