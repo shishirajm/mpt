@@ -43,7 +43,7 @@ Do not invent capacities, certifications, client names, awards or years. Everyth
 - Founded **2013** with 3 employees; **55+** today.
 - 2014 moved to 5,000 sq ft · 2015 added PCD manufacturing · 2019 own site, **15,000 sq ft**.
 - Production tolerances **≤3 µm** for tool diameters.
-- Products: **PCD tools · Fine boring tools · ISO tools · Adaptors / tool holding systems · Tool setting devices & fixtures**. The site also shows **Tool presetters** as a 6th tools-grid category — the off-machine length/diameter measuring equipment itself, a companion to Tool setting devices rather than a separate company-profile fact; both trace to the same "gauging systems" claim.
+- Products: **PCD tools · Fine boring tools · ISO tools · Adaptors / tool holding systems · Tool setting devices & fixtures**.
 - Sectors: **Automobile · Aerospace · Defence · Medical · Power generation · Machine builders**.
 - Services: complete responsibility for proving out tools, incl. cycle time optimisation and statistical parameters.
 - Everything — design, planning, PCD manufacturing, QA — under one roof in Peenya.
@@ -217,7 +217,7 @@ One codebase, three *designed* states — each reviewed and signed off separatel
 ## 10. SEO & AI search
 
 - `<title>`: `Primary Keyword | Mac Precitec India Private Limited`, ≤60 chars. Unique 140–160 char description per page.
-- URLs lowercase, hyphenated, meaningful (`/products/fine-boring-tools/`). Self-referencing canonical on every page.
+- URLs lowercase, hyphenated, meaningful (`/products/fine-boring-tools.html`). Self-referencing canonical on every page.
 - JSON-LD: `Organization` site-wide, `Product` on product pages, `BreadcrumbList` on nested pages. Never mark up invisible content.
 - Update `sitemap.xml` in the same change that adds a page.
 - Descriptive internal link text — never "click here"/"read more" as the whole link.
@@ -230,8 +230,10 @@ One codebase, three *designed* states — each reviewed and signed off separatel
 ```
 src/                   everything that ships — this is the web root
 ├── index.html  contact.html  company.html  engineering.html  sectors.html  404.html
-├── tools/                index.html + pcd-tools.html, fine-boring-tools.html,
+├── products/             index.html + pcd-tools.html, fine-boring-tools.html,
 │                         iso-tools.html, adaptors.html, tool-setting-devices.html
+├── tools/                6 meta-refresh redirect stubs (old /tools/... URLs → /products/...),
+│                         kept so old links/bookmarks still land somewhere — not dead code
 ├── css/site.css          whole stylesheet
 ├── js/app.js             nav enhancement — site works without it
 ├── js/analytics.js       measurement layer, only file naming a vendor
@@ -252,7 +254,7 @@ infrastructure that never touches the shipped site.
 
 Preview: `python3 -m http.server 8000 --directory src`. A `file://` open won't work — paths are root-absolute.
 
-Nav is `Tools · Sectors · Engineering · Company · Contact` + Enquire — every item is now a real page (`/tools/`, `/sectors.html`, `/engineering.html`, `/company.html`, `/contact.html`). No anchor-only nav links remain.
+Nav is `Products · Sectors · Engineering · Company · Contact` + Enquire — every item is now a real page (`/products/`, `/sectors.html`, `/engineering.html`, `/company.html`, `/contact.html`). No anchor-only nav links remain.
 
 ---
 
