@@ -7,7 +7,7 @@
 
   var VENDORS = {
     // Cookieless, no personal data, so it runs without a consent gate.
-    plausible: { enabled: false, domain: 'macprecitecindia.com', needsConsent: false },
+    plausible: { enabled: true, domain: 'macprecitecindia.com', needsConsent: false },
     // Sets cookies and records sessions — consent required.
     hotjar:    { enabled: false, siteId: null, needsConsent: true },
     clarity:   { enabled: false, projectId: null, needsConsent: true }
@@ -48,13 +48,22 @@
     form.addEventListener('submit', function () { track('rfq_submitted'); });
   }
 
+  function loadPlausible(v) {
+    var s = document.createElement('script');
+    s.defer = true;
+    s.src = 'https://plausible.io/js/script.js';
+    s.setAttribute('data-domain', v.domain);
+    document.head.appendChild(s);
+  }
+
   function loadVendors() {
     var c = consent();
     Object.keys(VENDORS).forEach(function (k) {
       var v = VENDORS[k];
       if (!v.enabled) return;
       if (v.needsConsent && c !== 'accepted') return;
-      // Vendor snippets are inserted here when enabled. Nothing loads by default.
+      // Hotjar/Clarity loaders follow the same pattern once enabled.
+      if (k === 'plausible') loadPlausible(v);
     });
   }
 
