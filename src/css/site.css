@@ -228,6 +228,38 @@ ul{margin:0;padding:0;list-style:none}
 .band h2{font-size:var(--fs-xl);margin:0 0 var(--s-2)}
 .band .sd{color:var(--c-ink-dim);font-size:var(--fs-sm);max-width:62ch;margin:0 0 var(--s-5)}
 
+/* ---------- Sector row — text + photo, alternating side, works on
+   both the dark default and the light .band (sectors.html) ---------- */
+.sector-row{padding:var(--s-7) 0}
+.sector-row .wrap{display:grid;gap:var(--s-5);align-items:center}
+.sector-row h2{font-size:var(--fs-xl);margin:0 0 var(--s-3)}
+.sector-row .spec{
+  display:inline-block;font-family:var(--f-mono);font-size:var(--fs-micro);
+  letter-spacing:.1em;text-transform:uppercase;color:var(--c-ice);
+  border:1px solid #21313D;padding:3px var(--s-2);margin:0 0 var(--s-4);
+}
+.sector-row p{color:var(--c-text-mute);max-width:62ch;margin:0 0 var(--s-4);line-height:1.7}
+.sector-row p a{color:var(--c-text);text-decoration:underline}
+.sector-row a.cta{color:var(--c-accent);font-weight:700;font-size:var(--fs-sm);text-decoration:underline}
+.band.sector-row .spec{color:#00608C;border-color:#B7C6CE}
+.band.sector-row p{color:var(--c-ink-mute)}
+.band.sector-row p a{color:var(--c-ink)}
+.band.sector-row a.cta{color:var(--c-link-band)}
+@media (min-width:768px){
+  .sector-row .wrap{grid-template-columns:1.1fr 1fr;gap:var(--s-6)}
+  .sector-row.flip .wrap{grid-template-columns:1fr 1.1fr}
+  .sector-row.flip .photo{order:-1}
+}
+
+/* ---------- Sector jump-strip ---------- */
+.jump{display:flex;flex-wrap:wrap;gap:var(--s-3);margin-top:var(--s-5)}
+.jump a{
+  display:flex;align-items:center;min-height:44px;
+  font-family:var(--f-mono);font-size:var(--fs-micro);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--c-ice);border:1px solid #21313D;padding:0 var(--s-3);text-decoration:none;
+}
+@media (hover:hover){.jump a:hover{border-color:var(--c-accent);color:var(--c-accent)}}
+
 /* CSS-only tabs: radio + label, works with JS disabled, arrow-key navigable */
 .tabs{border-bottom:1px solid var(--c-band-line);margin-bottom:var(--s-5)}
 .tabs input{position:absolute;opacity:0;pointer-events:none}
