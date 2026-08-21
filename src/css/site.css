@@ -448,7 +448,7 @@ ul{margin:0;padding:0;list-style:none}
    The global `picture{height:auto}` reset (see critical CSS) breaks a
    height:100% chain partway through — picture needs its own explicit
    100% or the img falls back to its intrinsic ratio instead of cropping. */
-.photo.wide{aspect-ratio:16/10}
+.photo.wide{aspect-ratio:1/1}
 .photo.wide picture{height:100%}
 .photo.wide img{width:100%;height:100%;object-fit:cover}
 
