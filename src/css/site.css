@@ -443,14 +443,6 @@ ul{margin:0;padding:0;list-style:none}
   font-family:var(--f-mono);font-size:var(--fs-micro);letter-spacing:.14em;
   text-transform:uppercase;color:var(--c-text-dim);padding-top:var(--s-2);
 }
-/* Fixed-ratio crop for slots that must stay a consistent shape regardless
-   of the source photo's own orientation (e.g. tabbed panels that swap).
-   The global `picture{height:auto}` reset (see critical CSS) breaks a
-   height:100% chain partway through — picture needs its own explicit
-   100% or the img falls back to its intrinsic ratio instead of cropping. */
-.photo.wide{aspect-ratio:1/1}
-.photo.wide picture{height:100%}
-.photo.wide img{width:100%;height:100%;object-fit:cover}
 
 /* ---------- Photo pairs/grids (infrastructure, process) ---------- */
 /* align-items:start (not the grid default of stretch) — these pair a
