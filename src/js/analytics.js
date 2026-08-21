@@ -7,7 +7,7 @@
 
   var VENDORS = {
     // Cookieless, no personal data, so it runs without a consent gate.
-    plausible: { enabled: true, domain: 'macprecitecindia.com', needsConsent: false },
+    plausible: { enabled: true, scriptId: 'pa-0OH-Nn_N8DKyrq22voS1W', needsConsent: false },
     // Sets cookies and records sessions — consent required.
     hotjar:    { enabled: false, siteId: null, needsConsent: true },
     clarity:   { enabled: false, projectId: null, needsConsent: true }
@@ -49,10 +49,14 @@
   }
 
   function loadPlausible(v) {
+    // Queue/init shim, verbatim from Plausible's own issued snippet
+    // (docs/plausible_installation.md) — needed before the script runs.
+    window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments); };
+    plausible.init = plausible.init || function (i) { plausible.o = i || {}; };
+    plausible.init();
     var s = document.createElement('script');
-    s.defer = true;
-    s.src = 'https://plausible.io/js/script.js';
-    s.setAttribute('data-domain', v.domain);
+    s.async = true;
+    s.src = 'https://plausible.io/js/' + v.scriptId + '.js';
     document.head.appendChild(s);
   }
 
