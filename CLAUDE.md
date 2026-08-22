@@ -43,10 +43,11 @@ Do not invent capacities, certifications, client names, awards or years. Everyth
 - Founded **2013** with 3 employees; **55+** today.
 - 2014 moved to 5,000 sq ft · 2015 added PCD manufacturing · 2019 own site, **15,000 sq ft**.
 - Production tolerances **≤3 µm** for tool diameters.
-- Products: **PCD tools · Fine boring tools · ISO tools · Adaptors / tool holding systems · Tool setting devices & fixtures**.
+- Products: **PCD tools · Fine boring tools · ISO tools · Special blades and inserts · Adaptors / tool holding systems · Tool setting devices & fixtures**.
 - Sectors: **Automobile · Aerospace · Defence · Medical · Power generation · Machine builders**.
 - Services: complete responsibility for proving out tools, incl. cycle time optimisation and statistical parameters.
 - Everything — design, planning, PCD manufacturing, QA — under one roof in Peenya.
+- Blades/inserts: multiple blades and a back taper on each insert allow higher demands on the cutting edge; PCD inserts carry laser-eroded chip breakers to clear the cut and avoid chip-jam stoppages. We integrate/modify cutting tools and build special cutting heads to a client's requirement for complex operations.
 
 **Never claim ISO 9001, IATF 16949 or any certification** unless confirmed in writing by the owner. "ISO Tools" is a *product category*, not a certification — never let copy imply otherwise.
 
@@ -233,7 +234,8 @@ src/                   everything that ships — this is the web root
 ├── company.html          meta-refresh redirect stub → /engineering.html (company.html was
 │                         merged into engineering.html; kept so old bookmarks still land)
 ├── products/             index.html + pcd-tools.html, fine-boring-tools.html,
-│                         iso-tools.html, adaptors.html, tool-setting-devices.html, gallery.html
+│                         iso-tools.html, special-blades-inserts.html, adaptors.html,
+│                         tool-setting-devices.html, gallery.html
 ├── tools/                6 meta-refresh redirect stubs (old /tools/... URLs → /products/...),
 │                         kept so old links/bookmarks still land somewhere — not dead code
 ├── css/site.css          whole stylesheet

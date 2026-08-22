@@ -10,6 +10,7 @@ const pages = [
   { name: 'products-pcd', path: '/products/pcd-tools.html' },
   { name: 'products-fine-boring', path: '/products/fine-boring-tools.html' },
   { name: 'products-iso', path: '/products/iso-tools.html' },
+  { name: 'products-blades-inserts', path: '/products/special-blades-inserts.html' },
   { name: 'products-adaptors', path: '/products/adaptors.html' },
   { name: 'products-setting-devices', path: '/products/tool-setting-devices.html' },
   { name: 'products-gallery', path: '/products/gallery.html' },
