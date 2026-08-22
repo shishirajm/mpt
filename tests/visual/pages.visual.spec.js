@@ -13,6 +13,7 @@ const pages = [
   { name: 'products-iso', path: '/products/iso-tools.html' },
   { name: 'products-adaptors', path: '/products/adaptors.html' },
   { name: 'products-setting-devices', path: '/products/tool-setting-devices.html' },
+  { name: 'products-gallery', path: '/products/gallery.html' },
   { name: 'sectors', path: '/sectors.html' },
   { name: '404', path: '/404.html' },
 ];
