@@ -229,9 +229,11 @@ One codebase, three *designed* states — each reviewed and signed off separatel
 
 ```
 src/                   everything that ships — this is the web root
-├── index.html  contact.html  company.html  engineering.html  sectors.html  404.html
+├── index.html  contact.html  engineering.html  sectors.html  404.html
+├── company.html          meta-refresh redirect stub → /engineering.html (company.html was
+│                         merged into engineering.html; kept so old bookmarks still land)
 ├── products/             index.html + pcd-tools.html, fine-boring-tools.html,
-│                         iso-tools.html, adaptors.html, tool-setting-devices.html
+│                         iso-tools.html, adaptors.html, tool-setting-devices.html, gallery.html
 ├── tools/                6 meta-refresh redirect stubs (old /tools/... URLs → /products/...),
 │                         kept so old links/bookmarks still land somewhere — not dead code
 ├── css/site.css          whole stylesheet
@@ -254,7 +256,7 @@ infrastructure that never touches the shipped site.
 
 Preview: `python3 -m http.server 8000 --directory src`. A `file://` open won't work — paths are root-absolute.
 
-Nav is `Products · Sectors · Engineering · Company · Contact` + Enquire — every item is now a real page (`/products/`, `/sectors.html`, `/engineering.html`, `/company.html`, `/contact.html`). No anchor-only nav links remain.
+Nav is `Products · Sectors · Engineering · Contact` + Enquire — every item is a real page (`/products/`, `/sectors.html`, `/engineering.html`, `/contact.html`). No anchor-only nav links remain. `company.html` was merged into `engineering.html` (company/about content — vision, milestones, team, infrastructure — now lives there under a jump-link strip) and no longer has its own nav item; the old URL redirects.
 
 ---
 

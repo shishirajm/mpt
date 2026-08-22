@@ -5,7 +5,6 @@ const viewports = require('./viewports');
 const pages = [
   { name: 'home', path: '/' },
   { name: 'contact', path: '/contact.html' },
-  { name: 'company', path: '/company.html' },
   { name: 'engineering', path: '/engineering.html' },
   { name: 'products-index', path: '/products/' },
   { name: 'products-pcd', path: '/products/pcd-tools.html' },
