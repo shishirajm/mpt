@@ -518,7 +518,8 @@ ul{margin:0;padding:0;list-style:none}
 /* Zoom trigger — the label bar is always visible (mobile has no hover) so
    the affordance never depends on a hover-only cue, per §7. Height:100%
    all the way down to the img — see .photo.wide comment above for why. */
-.zoom{display:block;position:relative;cursor:zoom-in;height:100%}
+.zoom{display:block;position:relative;cursor:zoom-in;height:100%;
+  border:1px solid var(--c-line);transition:border-color .3s ease}
 .zoom picture{height:100%}
 .zoom:focus-visible{outline:2px solid var(--c-accent);outline-offset:2px}
 .zoom-label{
@@ -534,6 +535,7 @@ ul{margin:0;padding:0;list-style:none}
   .zoom img{transition:transform .3s ease-out}
   .zoom:hover img,.zoom:focus-visible img{transform:scale(1.06)}
   .zoom:hover .zoom-label,.zoom:focus-visible .zoom-label{background:var(--c-accent);color:var(--c-accent-deep)}
+  .zoom:hover{border-color:var(--c-accent)}
 }
 @media (prefers-reduced-motion:reduce){
   .zoom img{transition:none}
