@@ -550,9 +550,15 @@ ul{margin:0;padding:0;list-style:none}
 .lightbox-frame img{
   display:block;margin:0 auto;max-width:92vw;max-height:78vh;width:auto;height:auto;
 }
-.lightbox-frame figcaption{
-  font-family:var(--f-mono);font-size:var(--fs-micro);letter-spacing:.14em;
-  text-transform:uppercase;color:var(--c-text-mute);padding-top:var(--s-3);
+.lightbox-frame figcaption{padding-top:var(--s-3)}
+.lightbox-frame .lb-name{
+  display:block;font-family:var(--f-display);font-weight:600;
+  text-transform:uppercase;letter-spacing:.01em;font-size:var(--fs-lg);
+  color:var(--c-text);margin-bottom:var(--s-1);
+}
+.lightbox-frame .lb-meta{
+  display:block;font-family:var(--f-mono);font-size:var(--fs-micro);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--c-text-mute);
 }
 .lightbox-close{
   position:absolute;top:var(--s-4);right:var(--s-4);z-index:2;
