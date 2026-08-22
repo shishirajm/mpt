@@ -39,4 +39,32 @@
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
   }
+
+  /* Cookie-consent banner. Analytics that needs consent (see
+     js/analytics.js VENDORS.*.needsConsent) stays off until this sets
+     mpi_consent=accepted — no banner, no consent, nothing loads. Built
+     and inserted here so no HTML file needs a markup change. */
+  if (!document.cookie.match(/(?:^|;\s*)mpi_consent=([^;]*)/)) {
+    var bar = document.createElement('div');
+    bar.className = 'consent-bar';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'Cookie consent');
+    bar.innerHTML =
+      '<p>We use cookieless analytics by default. With your consent, we also use ' +
+      'session-recording tools to see how visitors use the site. ' +
+      '<a href="/privacy.html">Privacy policy</a></p>' +
+      '<div class="consent-actions">' +
+      '<button type="button" class="consent-decline" data-hook="consent-decline">Decline</button>' +
+      '<button type="button" class="consent-accept" data-hook="consent-accept">Accept</button>' +
+      '</div>';
+    document.body.appendChild(bar);
+
+    function decide(value) {
+      document.cookie = 'mpi_consent=' + value + ';path=/;max-age=31536000;SameSite=Lax';
+      bar.remove();
+      if (value === 'accepted' && window.mpiLoadVendors) window.mpiLoadVendors();
+    }
+    bar.querySelector('.consent-decline').addEventListener('click', function () { decide('declined'); });
+    bar.querySelector('.consent-accept').addEventListener('click', function () { decide('accepted'); });
+  }
 })();

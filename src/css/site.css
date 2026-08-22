@@ -436,6 +436,25 @@ ul{margin:0;padding:0;list-style:none}
   min-height:44px;display:flex;align-items:center;
 }
 
+/* Cookie-consent banner — injected by js/app.js, gone once decided */
+.consent-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-4);
+  background:var(--c-surface);border-top:1px solid var(--c-line);
+  padding:var(--s-4) var(--pad);
+}
+.consent-bar p{color:var(--c-text-mute);font-size:var(--fs-xs);line-height:1.6;flex:1;min-width:220px;margin:0}
+.consent-bar p a{color:var(--c-ice)}
+.consent-actions{display:flex;gap:var(--s-3)}
+.consent-actions button{
+  min-height:44px;padding:0 var(--s-4);font-family:var(--f-mono);font-size:var(--fs-xs);
+  letter-spacing:.06em;text-transform:uppercase;cursor:pointer;
+  border:1px solid #21313D;background:transparent;color:var(--c-ice);
+}
+.consent-actions button.consent-accept{background:var(--c-accent);color:var(--c-accent-deep);border-color:var(--c-accent);font-weight:700}
+@media (hover:hover){.consent-actions button:hover{border-color:var(--c-accent);color:var(--c-accent)}
+  .consent-actions button.consent-accept:hover{background-color:#00B4FF;border-color:#00B4FF;color:var(--c-accent-deep)}}
+
 /* ============================================================
    CONTACT PAGE
    ============================================================ */

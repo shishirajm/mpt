@@ -9,7 +9,7 @@
     // Cookieless, no personal data, so it runs without a consent gate.
     plausible: { enabled: true, scriptId: 'pa-0OH-Nn_N8DKyrq22voS1W', needsConsent: false },
     // Sets cookies and records sessions — consent required.
-    hotjar:    { enabled: false, siteId: null, needsConsent: true },
+    hotjar:    { enabled: true, src: 'https://t.contentsquare.net/uxa/e3e9f1db3d1e3.js', needsConsent: true },
     clarity:   { enabled: false, projectId: null, needsConsent: true }
   };
 
@@ -60,16 +60,33 @@
     document.head.appendChild(s);
   }
 
+  function loadHotjar(v) {
+    // Issued snippet is a single opaque async script — no inline config
+    // object, so the site's identity lives entirely in the URL.
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = v.src;
+    document.head.appendChild(s);
+  }
+
+  // Guards against loading twice — the consent banner (js/app.js) can call
+  // mpiLoadVendors() right after Accept, and the load-event handler below
+  // also calls it; either can run first.
+  var loaded = {};
   function loadVendors() {
     var c = consent();
     Object.keys(VENDORS).forEach(function (k) {
       var v = VENDORS[k];
-      if (!v.enabled) return;
+      if (!v.enabled || loaded[k]) return;
       if (v.needsConsent && c !== 'accepted') return;
-      // Hotjar/Clarity loaders follow the same pattern once enabled.
+      loaded[k] = true;
       if (k === 'plausible') loadPlausible(v);
+      if (k === 'hotjar') loadHotjar(v);
     });
   }
+  // Called by the consent banner right after Accept, so a consent-gated
+  // vendor can start in the same session, not just the next.
+  window.mpiLoadVendors = loadVendors;
 
   // Never before the load event; never before LCP.
   window.addEventListener('load', function () {
